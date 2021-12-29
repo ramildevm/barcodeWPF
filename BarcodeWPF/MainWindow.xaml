@@ -6,10 +6,20 @@
         xmlns:local="clr-namespace:BarcodeWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="497.944" Width="406.71">
-    <StackPanel Background="Azure">
+    <StackPanel Background="DarkGray">
+        <StackPanel.Resources>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="#FF94DAFF"/>
+                <Setter Property="Margin" Value="0,0,0,20"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="Width" Value="133"/>
+                <Setter Property="Height" Value="35"/>
+            </Style>
+        </StackPanel.Resources>
         <TextBox x:Name="txtBox" HorizontalAlignment="Center" Background="White" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Margin="0,20,0,20" SpellCheck.IsEnabled="True" TextChanged="TxtBox_TextChanged"/>
-        <Button x:Name="btnCheck"  Content="Проверить" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="133" Height="35" Margin="0,0,0,20" Click="BtnCheck_Click"/>
-        <Button x:Name="btnGenerate" Content="Сгенерировать" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="133" Height="35" Margin="0,0,0,20" Click="BtnGenerate_Click"/>
+        <Button x:Name="btnCheck"  Content="Проверить" Style="{StaticResource ButtonStyle}" Click="BtnCheck_Click"/>
+        <Button x:Name="btnGenerate" Content="Сгенерировать" Style="{StaticResource ButtonStyle}" Click="BtnGenerate_Click"/>
         <Border Height="252" Width="349" BorderBrush="Black" BorderThickness="1">
             <InkCanvas x:Name="barcodeCan" Height="250" Width="347" Background="White" EditingMode="GestureOnly" >
 
